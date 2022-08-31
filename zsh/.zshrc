@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo fzf-tab zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
