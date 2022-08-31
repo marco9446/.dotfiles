@@ -1,2 +1,13 @@
 alias vim='nvim'
+alias nix_install="nix-env -iA"
+alias nix_uninstall="nix-env -e"
+alias nix_update="nix-env -u '*'"
+alias nix_clean="nix-collect-garbage -d"
+
+
+
+# windows specific
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    alias win=$WIN_HOME
+fi
 

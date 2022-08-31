@@ -5,7 +5,7 @@
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh" 
+export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -60,9 +60,16 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# User VARIABLES
+# windows specific
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    WIN_HOME_RAW="$(cmd.exe /c "<nul set /p=%UserProfile%" 2>/dev/null)"
+    WIN_HOME="$(wslpath $WIN_HOME_RAW)"
+fi
+
 # ALIASES
 if [ -f ~/.zsh_aliases ]; then
-. ~/.zsh_aliases
+    . ~/.zsh_aliases
 fi
 
 
