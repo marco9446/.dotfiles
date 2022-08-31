@@ -27,3 +27,18 @@ set noshowmode
 set updatetime=250 
 set encoding=UTF-8
 set mouse=a
+
+
+
+" --- Plugins
+
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'nvim-lualine/lualine.nvim'                    " Status line
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Color scheme
+call plug#end()
+
+
+" --- Colors
+set background=dark
+colorscheme tokyonight

@@ -13,14 +13,18 @@ nix-env -iA \
 	nixpkgs.yarn \
 	nixpkgs.fzf \
 	nixpkgs.bat \
+	nixpkgs.oh-my-zsh
 
 # stow dotfiles
 stow git
 stow nvim
 stow zsh
 
+# add zsh as a login shell
+command -v zsh | sudo tee -a /etc/shells
+
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install neovim plugins
+nvim --headless +PlugInstall +qall
