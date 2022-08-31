@@ -30,7 +30,7 @@ sudo chsh -s $(which zsh) $USER
 nvim --headless +PlugInstall +qall
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
