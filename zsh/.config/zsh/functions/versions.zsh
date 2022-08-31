@@ -1,8 +1,8 @@
 
 
-awk_format='{out=""; for(i=2;i<=NF;i++){out=out" "$i}; printf "%-10s%s\n",$1,out}'
 
 function versions(){
+  local awk_format='{out=""; for(i=2;i<=NF;i++){out=out" "$i}; printf "%-10s%s\n",$1,out}'
   echo "APP VERSION\n"| awk "$awk_format"
   echo "OS `cat /etc/os-release | grep  -oP 'VERSION="\K[^"]+'`" | awk "$awk_format"
 
