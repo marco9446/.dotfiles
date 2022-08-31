@@ -28,19 +28,7 @@ sudo chsh -s $(which zsh) $USER
 # install neovim plugins
 nvim --headless +PlugInstall +qall
 
-# install oh-my-zsh
-# echo " "
-# echo "Installing oh-my-zsh..."
-# git clone -q https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-
-# echo "Installing oh-my-zsh plugins..."
-# # install zsh-autosuggestions
-# git clone -q https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# # install zsh-syntax-highlighting
-# git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# # install fzf-tab
-# git clone -q https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-# echo " "
-# echo "Done"
+# clone antidote if necessary
+if  [ ! -d "${ZDOTDIR:-$HOME}/.antidote" ]; then
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+fi

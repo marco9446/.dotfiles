@@ -1,12 +1,20 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# enable nix packages
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 
 
 
+# source antidote and load plugins from `${ZDOTDIR:-~}/.zsh_plugins.txt`
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
 
 
 # User configuration
@@ -19,12 +27,9 @@ export LANG=en_US.UTF-8
 # source functions
 for f in ~/.config/zsh/functions/*; do source $f; done
 
-# PLUGINS
+# PLUGINS Variables
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-source ~/.config/zsh/plugins/sudo.plugin.zsh
-# source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
-source ~/.config/zsh/plugins/zsh-autosuggestions.plugin.zsh
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 # THEME
 # source ~/.config/zsh/themes/robbyrussell.zsh-theme
@@ -58,6 +63,8 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 if [ -e /home/work/.nix-profile/etc/profile.d/nix.sh ]; then . /home/work/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
