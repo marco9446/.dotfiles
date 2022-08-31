@@ -5,7 +5,7 @@
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/oh-my-zsh" 
+export ZSH="$HOME/.oh-my-zsh" 
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
