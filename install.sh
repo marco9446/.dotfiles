@@ -13,6 +13,7 @@ nix-env -iA \
 	nixpkgs.yarn \
 	nixpkgs.fzf \
 	nixpkgs.bat \
+	nixpkgs.awscli2
 
 # stow dotfiles
 stow git
