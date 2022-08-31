@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# enable nix packages
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Path to your oh-my-zsh installation.
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-export ZSH=$(nix-env -q --out-path oh-my-zsh | cut -d' ' -f3)/share/oh-my-zsh
+export ZSH="$HOME/oh-my-zsh" 
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -31,7 +32,8 @@ COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 HIST_STAMPS="dd.mm.yyyy"
 
-plugins=(git sudo)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -13,7 +13,7 @@ nix-env -iA \
 	nixpkgs.yarn \
 	nixpkgs.fzf \
 	nixpkgs.bat \
-	nixpkgs.oh-my-zsh
+
 
 # stow dotfiles
 stow git
@@ -28,3 +28,12 @@ sudo chsh -s $(which zsh) $USER
 
 # install neovim plugins
 nvim --headless +PlugInstall +qall
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# install zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# install zsh 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
