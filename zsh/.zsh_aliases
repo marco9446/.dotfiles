@@ -1,10 +1,22 @@
 alias vim='nvim'
+
+# NIX
 alias nix_install="nix-env -iA"
 alias nix_uninstall="nix-env -e"
 alias nix_update="nix-env -u '*'"
 alias nix_clean="nix-collect-garbage -d"
 
+# ZSH
+alias zsh_edit="vim ~/.zshrc"
+alias zsh_reload="source ~/.zshrc"
 
+# GENERAL
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias ll='ls -l'      #long list
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+alias t='tail -f'
 
 # windows specific
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then

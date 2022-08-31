@@ -4,38 +4,10 @@
 # enable nix packages
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-HIST_STAMPS="dd.mm.yyyy"
-
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-plugins=(git sudo fzf-tab zsh-autosuggestions zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -43,6 +15,20 @@ source $ZSH/oh-my-zsh.sh
 # export LC_CTYPE=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# source functions
+for f in ~/.config/zsh/functions/*; do source $f; done
+
+# PLUGINS
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+source ~/.config/zsh/plugins/sudo.plugin.zsh
+# source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# THEME
+# source ~/.config/zsh/themes/robbyrussell.zsh-theme
+
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -73,3 +59,5 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 
+
+if [ -e /home/work/.nix-profile/etc/profile.d/nix.sh ]; then . /home/work/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
