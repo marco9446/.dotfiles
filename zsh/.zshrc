@@ -8,16 +8,20 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-
-
-
-
-# source antidote and load plugins from `${ZDOTDIR:-~}/.zsh_plugins.txt`
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
-
-
 # User configuration
+
+#set history size
+export HISTSIZE=1000
+#save history after logout
+export SAVEHIST=1000
+#history file
+export HISTFILE=~/.zhistory
+#append into history file
+setopt INC_APPEND_HISTORY
+#save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+#add timestamp for each entry
+setopt EXTENDED_HISTORY   
 
 # You may need to manually set your language environment
 # export LC_CTYPE=en_US.UTF-8
@@ -66,5 +70,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-if [ -e /home/work/.nix-profile/etc/profile.d/nix.sh ]; then . /home/work/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# source antidote and load plugins from `${ZDOTDIR:-~}/.zsh_plugins.txt`
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
