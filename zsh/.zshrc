@@ -9,18 +9,12 @@ fi
 autoload -U compinit 
 compinit
 
-#set history size
-export HISTSIZE=1000
-#save history after logout
-export SAVEHIST=1000
-#history file
-export HISTFILE=~/.zhistory
-#append into history file
-setopt INC_APPEND_HISTORY
-#save only one command if 2 common are same and consistent
-setopt HIST_IGNORE_DUPS
-#add timestamp for each entry
-setopt EXTENDED_HISTORY   
+export HISTSIZE=1000        #set history size
+export SAVEHIST=1000        #save history after logout
+export HISTFILE=~/.zhistory #history file
+setopt INC_APPEND_HISTORY   #append into history file
+setopt HIST_IGNORE_DUPS     #save only one command if 2 common are same and consistent
+setopt EXTENDED_HISTORY     #add timestamp for each entry
 
 # use typed words to limit the up arrow suggestions 
 autoload -U up-line-or-beginning-search
@@ -30,13 +24,12 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-
 # You may need to manually set your language environment
 # export LC_CTYPE=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# source functions
+# source custom functions
 for f in ~/.config/zsh/functions/*; do source $f; done
 
 # PLUGINS Variables

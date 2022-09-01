@@ -15,6 +15,9 @@ nix-env -iA \
 	nixpkgs.bat \
 	nixpkgs.awscli2
 
+# Clean nix store 
+nix-collect-garbage -d
+
 # stow dotfiles
 stow git
 stow nvim
