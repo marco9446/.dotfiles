@@ -36,8 +36,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'nvim-lualine/lualine.nvim'                    " Status line
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Color scheme
+Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
+lua require('pluginCustomization')
 
 " --- Colors
 set background=dark
