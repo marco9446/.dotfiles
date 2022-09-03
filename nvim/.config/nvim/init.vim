@@ -38,6 +38,7 @@ Plug 'nvim-lualine/lualine.nvim'                    " Status line
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Color scheme
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
