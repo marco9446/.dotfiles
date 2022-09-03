@@ -37,6 +37,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lualine/lualine.nvim'                    " Status line
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Color scheme
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -45,3 +46,15 @@ lua require('pluginCustomization')
 " --- Colors
 set background=dark
 colorscheme tokyonight
+
+" --- Mapping
+if has('win32')
+  nmap <C-/> <leader>c<Space>
+  vmap <C-/> <leader>c<Space>
+else
+  nmap <C-_> <leader>c<Space>
+  vmap <C-_> <leader>c<Space>
+endif
+
+
+
