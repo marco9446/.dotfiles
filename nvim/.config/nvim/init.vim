@@ -31,6 +31,8 @@ set cursorline
 set showmatch
 set hlsearch
 
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded nvim config"
+
 " --- Plugins
 
 call plug#begin('~/.config/nvim/plugged')
@@ -39,6 +41,7 @@ Plug 'nvim-lualine/lualine.nvim'                    " Status line
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Color scheme
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " nvim-tree
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
