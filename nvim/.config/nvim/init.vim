@@ -43,6 +43,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
+call plug#end()
+
 lua require('pluginCustomization')
 
 " --- Colors
