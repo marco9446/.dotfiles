@@ -1,4 +1,7 @@
+# NVIM
 alias vim='nvim'
+alias vim_edit='vim ~/.config/nvim/init.vim'
+alias dotfiles='cd ~/.dotfiles'
 
 # NIX
 alias nix_install="nix-env -iA"

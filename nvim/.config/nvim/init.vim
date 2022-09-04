@@ -1,8 +1,8 @@
 " --- General
 
-set termguicolors
 set tabstop=4 
 set softtabstop=4
+set termguicolors
 set shiftwidth=4
 set expandtab  " use spaces instead of tab
 set smartindent
@@ -52,6 +52,8 @@ set background=dark
 colorscheme tokyonight
 
 " --- Mapping
+let mapleader = "\\"
+
 if has('win32')
   nmap <C-/> <leader>c<Space>
   vmap <C-/> <leader>c<Space>
@@ -61,5 +63,19 @@ else
 endif
 
 nmap <silent> <C-b> :NvimTreeToggle<CR> 
+imap <silent> <C-b> <ESC>:NvimTreeToggle<CR>
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
+
+nmap <silent> <leader>q :q<CR>
+nmap <silent> <leader>w :w<CR>
+
+nmap <S-DOWN> yyp
+nnoremap <silent><A-j> :m .+1<CR>==
+nnoremap <silent><A-DOWN> :m .+1<CR>==
+nnoremap <silent><A-k> :m .-2<CR>==
+nnoremap <silent><A-UP> :m .-2<CR>==
+inoremap <silent><A-j> <Esc>:m .+1<CR>==gi
+inoremap <silent><A-k> <Esc>:m .-2<CR>==gi
+vnoremap <silent><A-j> :m '>+1<CR>gv=gv
+vnoremap <silent><A-k> :m '<-2<CR>gv=gv

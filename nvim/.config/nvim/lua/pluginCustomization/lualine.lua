@@ -1,6 +1,6 @@
 require('lualine').setup {
   options = {
-      disabled_filetypes = {'NvimTree'}
+      disabled_filetypes = {'NvimTree'},
   },
   sections = {
       lualine_a = {'mode'},
