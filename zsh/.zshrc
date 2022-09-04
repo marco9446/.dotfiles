@@ -39,7 +39,7 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # source ~/.config/zsh/themes/robbyrussell.zsh-theme
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # User VARIABLES
 # windows specific
