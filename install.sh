@@ -14,7 +14,8 @@ nix-env -iA \
 	nixpkgs.fzf \
 	nixpkgs.bat \
 	nixpkgs.awscli2 \
-    nixpkgs.jq
+    nixpkgs.jq \
+    nixpkgs.lf
 
 # Clean nix store 
 nix-collect-garbage -d
