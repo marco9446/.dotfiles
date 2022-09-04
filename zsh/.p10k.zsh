@@ -111,7 +111,7 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
-    # example               # example user-defined segment (see prompt_example function below)
+    gitdot               # example user-defined segment (see prompt_example function below)
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1596,7 +1596,15 @@
          p10k segment -f '#E95420'  -i 'UBU'
     fi
     # p10k segment -s $state -i '⭐' -f blue -t ${size[1]}b
-    # p10k segment -f '#ff0000' -i '⭐' 
+  }
+
+  function prompt_gitdot() {
+      local dotfilesStatus=$(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status --porcelain)
+       if [ -z "$dotfilesStatus" ]; then 
+           p10k segment -f '#9ece6a' -t '. clean'
+        else 
+            p10k segment -f '#e0af68' -i '. dirty'
+        fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
