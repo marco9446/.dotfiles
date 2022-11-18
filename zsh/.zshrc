@@ -24,6 +24,9 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # You may need to manually set your language environment
 # export LC_CTYPE=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
